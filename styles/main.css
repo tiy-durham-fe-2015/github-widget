@@ -1,0 +1,7 @@
+.avatar {
+  border: 3px double gray;
+  border-radius: 50%;
+  margin: 1em;
+  width: 10%;
+  display: inline-block;
+}

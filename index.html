@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="styles/main.css" rel="stylesheet">
     <title>GitHub Widget</title>
   </head>
   <body>
@@ -20,10 +21,26 @@
         </div>
         <div class="user-info__name"><%- m.name || m.login %></div>
       </div>
+
+      <div class="repos">
+        <button class="show-repos">Show <%- m.public_repos %> Repos</button>
+        <ul class= "repos-list">
+
+        </ul>
+      </div>
+
     </script>
 
-    <div class="repos">
-    </div>
+    <script type="text/html" id="repose">
+      <% m.forEach(function(repo){%>
+       <li>
+         <a class="repo-name" href="<%- repo.html_url %>">
+           <%- repo.name %>
+         </a>
+       </li>
+     <% }) %>
+
+    </script>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/lodash/lodash.min.js"></script>
