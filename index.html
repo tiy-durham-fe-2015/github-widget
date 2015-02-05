@@ -5,17 +5,28 @@
     <title>GitHub Widget</title>
   </head>
   <body>
+
     <form class="form">
       <input type="text" class="username-input">
       <button type="submit" class="submit-button">Go</button>
     </form>
-    <div class="user-info">
-      <div class="user-info__pic"></div>
-      <div class="user-info__name"></div>
+
+    <div class="wrapper"></div>
+
+    <script type="text/html" id="user-data">
+      <div class="user-info">
+        <div class="user-info__pic">
+          <img class="avatar" src="<%- m.avatar_url %>"/>
+        </div>
+        <div class="user-info__name"><%- m.name || m.login %></div>
+      </div>
+    </script>
+
+    <div class="repos">
     </div>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/lodash/lodash.min.js"></script>
-    <script src="js/app.js"></script>
     <script src="js/submit.js"></script>
 
   </body>
